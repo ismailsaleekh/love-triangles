@@ -3,5 +3,7 @@
  * @returns number of love triangles
  */
 module.exports = function getLoveTrianglesCount(preferences = []) {
-  // your implementation
+  return (
+    preferences.filter((item, index) => index + 1 === preferences[preferences[item - 1] - 1] && preferences[item - 1] !== item).length / 3
+  );
 };
